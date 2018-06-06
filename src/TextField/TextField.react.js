@@ -7,6 +7,7 @@ import {
     StyleSheet,
     Platform,
     Text,
+    ViewPropTypes,
 } from 'react-native';
 
 import RN from 'react-native/package.json';
@@ -85,8 +86,8 @@ const propTypes = {
     * Override Styles
     */
     style: PropTypes.shape({
-        inputContainer: View.propTypes.style,
-        container: View.propTypes.style,
+        inputContainer: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+        container: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
         labelText: Text.propTypes.style,
         titleText: Text.propTypes.style,
         affixText: Text.propTypes.style,
