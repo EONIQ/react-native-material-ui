@@ -174,9 +174,7 @@ function getStyles(props, context, state) {
             }),
         paddingTop: labelHeight,
         paddingBottom,
-        ...(disabled ?
-            { overflow: 'hidden' } :
-            { borderBottomWidth }),
+        borderBottomWidth,
         ...(multiline ?
             { height: labelHeight + paddingBottom + height } :
             { height: labelHeight + paddingBottom + (fontSize * 1.5) }),
@@ -564,7 +562,7 @@ class TextField extends PureComponent {
         return (
             <View {...containerProps}>
                 <Animated.View {...inputContainerProps}>
-                    {disabled && <Line type={disabledLineType} />}
+                    {/* {disabled && <Line type={disabledLineType} />} */}
 
                     <Label {...labelProps}>{label}</Label>
 
