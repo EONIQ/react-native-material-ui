@@ -165,6 +165,24 @@ export default function getTheme(theme, ...more) {
                 color: palette.disabledTextColor,
             },
         }, theme.buttonDisabled)),
+        buttonOutlined: StyleSheet.create(merge({
+            container: {
+                backgroundColor: 'transparent',
+                borderColor: palette.primaryColor,
+                borderWidth: 1,
+            },
+            text: {
+                color: palette.primaryColor,
+            }
+        }, theme.buttonOutlined)),
+        buttonOutlinedDisabled: StyleSheet.create(merge({
+            container: {
+                borderColor: palette.disabledTextColor,
+            },
+            text: {
+                color: palette.disabledTextColor,
+            }
+        }, theme.buttonOutlinedDisabled)),
         buttonRaised: StyleSheet.create(merge({
             container: {
                 backgroundColor: '#fff',

@@ -51,6 +51,7 @@ const propTypes = {
     }),
     primary: PropTypes.bool,
     accent: PropTypes.bool,
+    mode: "contained" | "outlined",
 };
 const defaultProps = {
     icon: null,
@@ -62,6 +63,7 @@ const defaultProps = {
     raised: false,
     upperCase: true,
     style: {},
+    mode: "contained",
 };
 const contextTypes = {
     uiTheme: PropTypes.object.isRequired,
@@ -74,12 +76,16 @@ function getStyles(props, context, state) {
         buttonRaised,
         buttonDisabled,
         buttonRaisedDisabled,
+        buttonOutlined,
+        buttonOutlinedDisabled,
     } = context.uiTheme;
 
     const {
-        primary, accent, disabled, raised,
+        primary, accent, disabled, raised, mode,
     } = props;
     const { palette } = context.uiTheme;
+
+    const outlined = mode === 'outlined';
 
     const local = {
         container: {},
@@ -116,6 +122,8 @@ function getStyles(props, context, state) {
             (!raised && disabled) && buttonDisabled.container,
             (raised && disabled) && buttonRaisedDisabled.container,
             local.container,
+            outlined && buttonOutlined.container,
+            outlined && disabled && buttonOutlinedDisabled.container,
             props.style.container,
         ],
         text: [
@@ -125,6 +133,8 @@ function getStyles(props, context, state) {
             (!raised && disabled) && buttonDisabled.text,
             (raised && disabled) && buttonRaisedDisabled.text,
             local.text,
+            outlined && buttonOutlined.text,
+            outlined && disabled && buttonOutlinedDisabled.text,
             props.style.text,
         ],
         icon: [
