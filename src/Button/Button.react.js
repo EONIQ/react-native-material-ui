@@ -51,7 +51,7 @@ const propTypes = {
     }),
     primary: PropTypes.bool,
     accent: PropTypes.bool,
-    mode: "contained" | "outlined",
+    mode: PropTypes.oneOf(["contained", "outlined"]),
 };
 const defaultProps = {
     icon: null,
