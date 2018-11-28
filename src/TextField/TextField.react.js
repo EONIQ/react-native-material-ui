@@ -559,6 +559,8 @@ class TextField extends PureComponent {
             style: StyleSheet.flatten(style.titleText),
         };
 
+        const { value: value_, ...rest } = props;
+
         return (
             <View {...containerProps}>
                 <Animated.View {...inputContainerProps}>
@@ -573,7 +575,7 @@ class TextField extends PureComponent {
                             style={[styles.input, StyleSheet.flatten(style.input), inputHeight]}
                             selectionColor={styles.primaryColor}
 
-                            {...props}
+                            {...rest}
 
                             editable={!disabled && editable}
                             onChange={this.onChange}
@@ -581,9 +583,11 @@ class TextField extends PureComponent {
                             onContentSizeChange={this.onContentSizeChange}
                             onFocus={this.onFocus}
                             onBlur={this.onBlur}
-                            value={value}
+                            // value={value}
                             ref={this.updateRef}
-                        />
+                        >
+                            {(this.props.renderText && this.props.renderText()) || value}
+                        </TextInput>
 
                         {this.renderAffix('suffix', active, focused)}
                         {this.renderAccessory()}

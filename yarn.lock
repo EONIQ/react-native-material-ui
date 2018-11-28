@@ -3856,6 +3856,15 @@ react-native-material-design-styles@^0.2.6:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/react-native-material-design-styles/-/react-native-material-design-styles-0.2.7.tgz#428560ef4d0659db1163c9f9b5476d886ed22d57"
 
+"react-native-material-ui@git+https://github.com/EONIQ/react-native-material-ui.git":
+  version "1.19.0"
+  resolved "git+https://github.com/EONIQ/react-native-material-ui.git#9f0f437505fcee2ef2d26f6d660d563d090d0861"
+  dependencies:
+    color "2.0.1"
+    lodash.merge "^4.0.0"
+    prop-types "^15.5.10"
+    react-native-material-design-styles "^0.2.6"
+
 react-native-vector-icons@^4.0.0:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-4.4.2.tgz#090f42ee0396c4cc4eae0ddaa518028ba8df40c7"
